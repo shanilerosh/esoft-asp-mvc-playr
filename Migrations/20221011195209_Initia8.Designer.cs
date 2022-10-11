@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Player_mgt_system.Models;
 
@@ -10,9 +11,10 @@ using Player_mgt_system.Models;
 namespace Player_mgt_system.Migrations
 {
     [DbContext(typeof(PlayerContext))]
-    partial class PlayerContextModelSnapshot : ModelSnapshot
+    [Migration("20221011195209_Initia8")]
+    partial class Initia8
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

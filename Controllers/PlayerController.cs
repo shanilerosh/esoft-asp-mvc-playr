@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Player_mgt_system.dto;
 using Player_mgt_system.Models;
@@ -54,8 +49,43 @@ namespace Player_mgt_system.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("UserName", "Password")] UserDto userDto)
+        public async Task<IActionResult> Create(UserDto userDto)
         {
+            //validate user
+            bool isExist = _context.Users.Any(e => e.Username.Equals(userDto.UserName));
+
+            if (isExist) {
+                return NotFound("User Already Exist");
+            }
+
+            var user = new User();
+
+            
+            user.Username = userDto.UserName;
+            user.Password = BCrypt.Net.BCrypt.HashPassword(userDto.Password);
+            user.role = "USER_PLAYER";
+            user.AuthStatus= "NOT_AUTHORIZED";
+
+            _context.Add(user);
+
+            await _context.SaveChangesAsync();
+
+
+            //create player
+            var player = new Player();
+            player.PlayerName = userDto.PlayerName;
+            player.Description= userDto.Description;
+            player.Speciality= userDto.Speciality;
+            player.Country= userDto.Country;
+
+            player.User = user;
+
+
+            _context.Add(player);
+
+
+            await _context.SaveChangesAsync();
+
             return View();
         }
 

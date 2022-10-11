@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Player_mgt_system.Models;
 
@@ -10,9 +11,10 @@ using Player_mgt_system.Models;
 namespace Player_mgt_system.Migrations
 {
     [DbContext(typeof(PlayerContext))]
-    partial class PlayerContextModelSnapshot : ModelSnapshot
+    [Migration("20221011193935_Initia4")]
+    partial class Initia4
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -45,12 +47,7 @@ namespace Player_mgt_system.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(250)");
 
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
-
                     b.HasKey("PlayId");
-
-                    b.HasIndex("UserId");
 
                     b.ToTable("players");
                 });
@@ -78,17 +75,6 @@ namespace Player_mgt_system.Migrations
                     b.HasKey("UserId");
 
                     b.ToTable("Users");
-                });
-
-            modelBuilder.Entity("Player_mgt_system.Models.Player", b =>
-                {
-                    b.HasOne("Player_mgt_system.Models.User", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("User");
                 });
 #pragma warning restore 612, 618
         }

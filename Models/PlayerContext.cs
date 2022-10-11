@@ -9,5 +9,7 @@ namespace Player_mgt_system.Models
         }
 
         public DbSet<Player> players{ get; set; }
+
+        public DbSet<User> Users{ get; set; }
     }
 }

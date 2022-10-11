@@ -13,10 +13,10 @@ namespace Player_mgt_system.Models
         [Column(TypeName = "nvarchar(250)")]
         public string Country { get; set; }
         [Column(TypeName = "nvarchar(250)")]
-        public string Registration { get; set; }
-        [Column(TypeName = "nvarchar(250)")]
         public string Speciality { get; set; }
         [Column(TypeName = "nvarchar(250)")]
         public string Description { get; set; }
+
+        public User User { get; set; }
     }
 }

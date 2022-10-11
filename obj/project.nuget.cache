@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "+e/zcvbfoAAv7ttdh0/WiUaPzr0oxO6f5wCCuDSjhwjC/dDCCR6NwGqwGw/fzHoMvMnoCFRWCz1hGSF4Y0gIGw==",
+  "dgSpecHash": "QJ2Cavo/zraWFifKs5tmmcCLp1tnNtsdUquj+QAz5rP7dur2U+p2j6kALxLxs7F9C/0U23aaC2pQe8XDh5ZLnA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Admin\\Desktop\\C#\\Player-mgt-system\\Player-mgt-system\\Player-mgt-system.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Admin\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\messagepack.annotations\\2.1.152\\messagepack.annotations.2.1.152.nupkg.sha512",
